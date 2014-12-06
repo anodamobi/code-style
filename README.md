@@ -527,6 +527,30 @@ When possible, always turn on "Treat Warnings as Errors" in the target's Build S
 
 Just one rule - no xib or storyboard files.
 
+##Other
+
+Please remove default Apple class template imports
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+For import global headers, please create <Project_Prefix>GlobalHeader.h file and import it in .pch file.
+If project doesn't have .pch file (default xcode6 project template) that you need to create it, and add it in build settings. 
+Default .pch file content
+
+```objc
+
+#ifdef __OBJC__
+@import Foundation;
+@import UIKit;
+#import "ANGlobalHeader.h"
+#endif
+
+```
+All other libraries, files and modules must me impoted in GlobalHeader file.
+
+
+
 # Other Objective-C Style Guides
 
 If ours doesn't fit your tastes, have a look at some other style guides:

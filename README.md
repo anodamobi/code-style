@@ -227,9 +227,9 @@ All projects must have class prefix - 2 characher describing project name.
 
 **For example:**
 
-WP - Wallpapers
-CD - CtrlDo
-AN - For ANODA internal libraties and files
+WP
+CD
+AN
 
 **Not:**
 

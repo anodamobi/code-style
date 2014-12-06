@@ -56,14 +56,16 @@ UIApplication.sharedApplication.delegate;
 ## Spacing
 
 * Indent using 4 spaces. Never indent with tabs. Be sure to set this preference in Xcode.
-* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open on the same line as the statement but close on a new line.
+* Method braces and other braces (`if`/`else`/`switch`/`while` etc.) always open and close on a new line as the statement.
 
 **For example:**
 ```objc
-if (user.isHappy) {
+if (user.isHappy) 
+{
 //Do something
 }
-else {
+else 
+{
 //Do something else
 }
 ```
@@ -76,7 +78,8 @@ Conditional bodies should always use braces even when a conditional body could b
 
 **For example:**
 ```objc
-if (!error) {
+if (!error) 
+{
     return success;
 }
 ```
@@ -114,7 +117,8 @@ When methods return an error parameter by reference, switch on the returned valu
 **For example:**
 ```objc
 NSError *error;
-if (![self trySomethingWithError:&error]) {
+if (![self trySomethingWithError:&error]) 
+{
     // Handle Error
 }
 ```
@@ -142,7 +146,7 @@ In method signatures, there should be a space after the scope (-/+ symbol). Ther
 
 Variables should be named as descriptively as possible. Single letter variable names should be avoided except in `for()` loops.
 
-Asterisks indicating pointers belong with the variable, e.g., `NSString *text` not `NSString* text` or `NSString * text`, except in the case of constants.
+Asterisks indicating pointers belongs to the class, e.g., `NSString* text` not `NSString *text` or `NSString * text`, except in the case of constants.
 
 Property definitions should be used in place of naked instance variables whenever possible. Direct instance variable access should be avoided except in initializer methods (`init`, `initWithCoder:`, etc…), `dealloc` methods and within custom setters and getters. For more information on using Accessor Methods in Initializer Methods and dealloc, see [here](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/MemoryMgmt/Articles/mmPractical.html#//apple_ref/doc/uid/TP40004447-SW6).
 
@@ -151,7 +155,7 @@ Property definitions should be used in place of naked instance variables wheneve
 ```objc
 @interface NYTSection: NSObject
 
-@property (nonatomic) NSString *headline;
+@property (nonatomic) NSString* headline;
 
 @end
 ```
@@ -177,13 +181,13 @@ Long, descriptive method and variable names are good.
 **For example:**
 
 ```objc
-UIButton *settingsButton;
+UIButton* settingsButton;
 ```
 
 **Not**
 
 ```objc
-UIButton *setBut;
+UIButton* setBut;
 ```
 
 A three letter prefix (e.g. `NYT`) should always be used for class names and constants, however may be omitted for Core Data entity names. Constants should be camel-case with all words capitalized and prefixed by the related class name for clarity.
@@ -373,14 +377,16 @@ This allows for more consistency across files and greater visual clarity.
 **For example:**
 
 ```objc
-if (!someObject) {
+if (!someObject) 
+{
 }
 ```
 
 **Not:**
 
 ```objc
-if (someObject == nil) {
+if (someObject == nil) 
+{
 }
 ```
 
@@ -413,7 +419,8 @@ Text and example taken from the [Cocoa Naming Guidelines](https://developer.appl
 
 Singleton objects should use a thread-safe pattern for creating their shared instance.
 ```objc
-+ (instancetype)sharedInstance {
++ (instancetype)sharedInstance 
+{
    static id sharedInstance = nil;
 
    static dispatch_once_t onceToken;

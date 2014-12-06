@@ -249,7 +249,7 @@ Project - Wallpapers, Prefix name - WP
 ```objc
 @interface UIImage (WPIconAdditions)
 
-- wp_BlackOverlayWithSize:(CGSize)size;
+- wp_blackOverlayWithSize:(CGSize)size;
 
 @end
 ```

@@ -1,8 +1,4 @@
-# NYTimes Objective-C Style Guide
-
-This style guide outlines the coding conventions of the iOS team at The New York Times. We welcome your feedback in [issues](https://github.com/NYTimes/objetive-c-style-guide/issues), [pull requests](https://github.com/NYTimes/objetive-c-style-guide/pulls) and [tweets](https://twitter.com/nytimesmobile). Also, [we're hiring](http://jobs.nytco.com/job/New-York-iOS-Developer-Job-NY/2572221/).
-
-Thanks to all of [our contributors](https://github.com/NYTimes/objective-c-style-guide/contributors).
+# Objective-C Style Guide
 
 ## Introduction
 
@@ -22,6 +18,7 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Error handling](#error-handling)
 * [Methods](#methods)
 * [Variables](#variables)
+* [Proprties](#properties)
 * [Naming](#naming)
 * [Comments](#comments)
 * [Init & Dealloc](#init-and-dealloc)
@@ -36,6 +33,7 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Singletons](#singletons)
 * [Imports](#imports)
 * [Xcode Project](#xcode-project)
+* [Using xib files](#using-xib-files)
 
 ## Dot-Notation Syntax
 
@@ -220,6 +218,25 @@ Instance variables should be camel-case with the leading word being lowercase, a
 id varnm;
 ```
 
+##Properties
+
+All proprties must have thread-safety modificator atomic, nonatomic and reference type. There should not be any spaces before @property than one space, brackets , space.
+**For example:**
+
+```objc
+@property (nonatomic, strong) NSString* myString;
+@property (nonatomic, copy) ANCodeBlock completion;
+@property (nonatomic, weak) UIView* view; 
+```
+
+**Not:**
+
+```objc
+@property BOOL loading;
+@property(assign) BOOL loading;
+@property(nonatomic) BOOL loading;
+```
+
 ## Comments
 
 When they are needed, comments should be used to explain **why** a particular piece of code does something. Any comments that are used must be kept up-to-date or deleted.
@@ -313,7 +330,7 @@ static const CGFloat NYTImageThumbnailHeight = 50.0;
 #define thumbnailHeight 2
 ```
 
-## Enumerated Types
+## Enumerated Typesv
 
 When using `enum`s, it is recommended to use the new fixed underlying type specification because it has stronger type checking and code completion. The SDK now includes a macro to facilitate and encourage use of fixed underlying types — `NS_ENUM()`
 
@@ -456,6 +473,10 @@ Note: For modules use the [@import](http://clang.llvm.org/docs/Modules.html#usin
 The physical files should be kept in sync with the Xcode project files in order to avoid file sprawl. Any Xcode groups created should be reflected by folders in the filesystem. Code should be grouped not only by type, but also by feature for greater clarity.
 
 When possible, always turn on "Treat Warnings as Errors" in the target's Build Settings and enable as many [additional warnings](http://boredzo.org/blog/archives/2009-11-07/warnings) as possible. If you need to ignore a specific warning, use [Clang's pragma feature](http://clang.llvm.org/docs/UsersManual.html#controlling-diagnostics-via-pragmas).
+
+## Using xib files
+
+Just one rule - no xib or storyboard files.
 
 # Other Objective-C Style Guides
 

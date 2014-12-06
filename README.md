@@ -20,6 +20,8 @@ Here are some of the documents from Apple that informed the style guide. If some
 * [Variables](#variables)
 * [Proprties](#properties)
 * [Naming](#naming)
+  * [Class naming](#class-naming)
+  * [Category naming](#category-naming)
 * [Comments](#comments)
 * [Init & Dealloc](#init-and-dealloc)
 * [Literals](#literals)
@@ -217,6 +219,53 @@ Instance variables should be camel-case with the leading word being lowercase, a
 ```objc
 id varnm;
 ```
+
+
+### Class naming
+
+All projects must have class prefix - 2 characher describing project name.
+
+**For example:**
+
+WP - Wallpapers
+CD - CtrlDo
+AN - For ANODA internal libraties and files
+
+**Not:**
+
+WLP
+WPPS
+CTRLDO
+CTDO
+
+### Category naming
+
+All categories must have project prefix.
+
+**For example:**
+
+Project - Wallpapers, Prefix name - WP
+
+```objc
+@interface UIImage (WPIconAdditions)
+
+- wp_BlackOverlayWithSize:(CGSize)size;
+
+@end
+```
+
+**Not:**
+
+Project - Wallpapers, Prefix name - WP
+
+```objc
+@interface UIImage (Icon)
+
+- blackOverlayWithSize:(CGSize)size;
+
+@end
+```
+
 
 ##Properties
 

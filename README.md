@@ -155,7 +155,7 @@ Property definitions should be used in place of naked instance variables wheneve
 ```objc
 @interface NYTSection: NSObject
 
-@property (nonatomic) NSString* headline;
+@property (nonatomic, strong) NSString* headline;
 
 @end
 ```
@@ -529,7 +529,7 @@ Just one rule - no xib or storyboard files.
 
 ##Other
 
-Please remove default Apple class template imports
+- Please remove default Apple class template imports
 
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
@@ -549,6 +549,9 @@ Default .pch file content
 ```
 All other libraries, files and modules must me impoted in GlobalHeader file.
 
+
+- All projects must use ARC feature.
+- 
 
 
 # Other Objective-C Style Guides

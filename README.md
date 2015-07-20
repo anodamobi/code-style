@@ -416,9 +416,9 @@ Private properties should be declared in class extensions (anonymous categories)
 ```objc
 @interface NYTAdvertisement ()
 
-@property (nonatomic, strong) GADBannerView *googleAdView;
-@property (nonatomic, strong) ADBannerView *iAdView;
-@property (nonatomic, strong) UIWebView *adXWebView;
+@property (nonatomic, strong) GADBannerView* googleAdView;
+@property (nonatomic, strong) ADBannerView* iAdView;
+@property (nonatomic, strong) UIWebView* adXWebView;
 
 @end
 ```

@@ -299,12 +299,13 @@ Block comments should generally be avoided, as code should be as self-documentin
 `init` methods should be structured like this:
 
 ```objc
-- (instancetype)init {
+- (instancetype)init 
+{
     self = [super init]; // or call the designated initializer
-    if (self) {
+    if (self) 
+    {
         // Custom initialization
     }
-
     return self;
 }
 ```
